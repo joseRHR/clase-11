@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript | Ejemplo 11</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script>
+        function calcular(){
+            let xb = document.getElementById('txtBase').value; //Obtenemos la base
+
+            if (xb == 0){
+                alert("Debes ingresar un número mayor a 0")
+            }
+
+            let xa = document.getElementById('txtAltura').value; //Obtenemos la altura
+
+            if (xa == 0 ){
+                alert("Altura -> Debes ingresar un número mayor a 0")
+            }
+
+            let xarea = (xb * xa)/ 2;
+            document.getElementById('txtArea').value= xarea.toFixed(2); //Colocamos el área
+        }
+        function limpiar(){
+            document.getElementById('txtBase').value="";
+            document.getElementById('txtAltura').value="";
+            document.getElementById('txtArea').value="0.00";
+            document.getElementById('txtBase').focus(); //Focalizamos el objeto texto base
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: center;">
+        <img src="img/banner.jpg" alt="">
+    </div>
+    <h1>AREA DEL TRIÁNGULO</h1>
+    <form action="">
+        <table>
+            <tr>
+                <td>Base </td>
+                <td>
+                    <input type="number" name="" id="txtBase"> m
+                </td>
+            </tr>
+            <tr>
+                <td>Altura </td>
+                <td>
+                    <input type="number" min="1" max="20" name="" id="txtAltura"> m
+                </td>
+            </tr>
+            <tr>
+                <td>Área </td>
+                <td>
+                    <input type="text" name="" value="0.00" id="txtArea" disabled> m2
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="objeto" onclick="calcular();" type="button" value="Calcular">
+                </td>
+                <td>
+                    <input class="objeto" onclick="limpiar();" type="button" value="Limpiar">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
